@@ -1,3 +1,4 @@
+// /sitemap.xml というURLにアクセスされたときに、route.ts がXMLを返す仕組みです。
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
