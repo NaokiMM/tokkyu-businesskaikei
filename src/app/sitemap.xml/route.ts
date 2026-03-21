@@ -39,14 +39,8 @@ async function resolveBaseUrl(): Promise<string> {
   );
 }
 
-const paths: string[] = [
-  "/",
-  "/dashboard",
-  "/transactions",
-  "/accounts",
-  "/reports",
-  "/settings",
-];
+/** 当面はトップのみ（必要になったらパスを追加） */
+const paths: string[] = ["/"];
 
 function escapeXml(s: string): string {
   return s
