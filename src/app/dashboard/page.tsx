@@ -25,6 +25,12 @@ function findQuestion(id: string) {
   return questions.find((q) => q.id === id);
 }
 
+function lessonStatus(progressPct: number) {
+  if (progressPct >= 100) return "完了";
+  if (progressPct <= 0) return "未着手";
+  return `進捗 ${progressPct}%`;
+}
+
 function StatCard({
   title,
   value,
@@ -85,13 +91,46 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <section>
+        <div className="rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-6">
+          <p className="text-sm font-medium text-foreground/70">今日の学習ガイド</p>
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight">
+            迷わず進める 3 ステップ
+          </h1>
+          <p className="mt-2 text-sm text-foreground/70">
+            まず「次の学習」を1つ進めて、次に問題演習、最後に進捗を確認すると効率的です。
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <div className="rounded-xl border border-foreground/10 bg-background p-4">
+              <p className="text-xs text-foreground/60">STEP 1</p>
+              <p className="mt-1 text-sm font-medium">次の学習を進める</p>
+              <p className="mt-1 text-xs text-foreground/70">
+                {nextLesson.title}（{lessonStatus(nextLesson.progressPct)}）
+              </p>
+            </div>
+            <div className="rounded-xl border border-foreground/10 bg-background p-4">
+              <p className="text-xs text-foreground/60">STEP 2</p>
+              <p className="mt-1 text-sm font-medium">問題演習で定着させる</p>
+              <p className="mt-1 text-xs text-foreground/70">
+                要復習 {kpis.pendingReviewCount} 問を優先して解く
+              </p>
+            </div>
+            <div className="rounded-xl border border-foreground/10 bg-background p-4">
+              <p className="text-xs text-foreground/60">STEP 3</p>
+              <p className="mt-1 text-sm font-medium">進捗と弱点を確認する</p>
+              <p className="mt-1 text-xs text-foreground/70">
+                今週の正答率 {formatPercent01(kpis.weekCorrectRate)}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div className="flex items-end justify-between gap-4 flex-wrap">
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight">
-              学習ダッシュボード
-            </h1>
+            <h2 className="text-xl font-semibold tracking-tight">学習ダッシュボード</h2>
             <p className="text-sm text-foreground/70 mt-1">
-              今日の学習状況と、復習・次の一歩（UIサンプル）
+              今日の学習状況をまとめて確認
             </p>
           </div>
           <div className="flex gap-2">
@@ -115,12 +154,12 @@ export default function DashboardPage() {
         <StatCard
           title="今日の学習時間"
           value={formatMinutes(kpis.todayMinutes)}
-          sub="学習ログ（ダミー）"
+          sub="学習ログ"
         />
         <StatCard
           title="今週の正答率"
           value={formatPercent01(kpis.weekCorrectRate)}
-          sub="直近7日（ダミー）"
+          sub="直近7日"
         />
         <StatCard
           title="完了レッスン"
@@ -130,7 +169,7 @@ export default function DashboardPage() {
         <StatCard
           title="要復習"
           value={String(kpis.pendingReviewCount)}
-          sub="苦手問題（ダミー）"
+          sub="苦手問題"
         />
       </section>
 
@@ -164,6 +203,9 @@ export default function DashboardPage() {
                       <td className="px-4 py-3 whitespace-nowrap">{a.date}</td>
                       <td className="px-4 py-3">
                         <div className="font-medium">{q?.numberLabel ?? "—"}</div>
+                        <div className="text-xs text-foreground/70 mt-1 line-clamp-1">
+                          {q?.prompt ?? ""}
+                        </div>
                         <div className="text-xs text-foreground/60 mt-1">
                           {q?.level ?? ""}
                         </div>
@@ -190,13 +232,13 @@ export default function DashboardPage() {
         />
         <ActionCard
           title="弱点テーマの復習"
-          description="要復習の問題を中心に短時間で立て直します（ダミー）"
+          description="要復習の問題を中心に短時間で立て直します"
           href="/reports"
           cta="進捗を見る"
         />
         <ActionCard
           title="今日の問題演習"
-          description="まずは直近のテーマから1問ずつ（ダミー）"
+          description="まずは直近のテーマから1問ずつ"
           href="/transactions"
           cta="問題演習"
         />
