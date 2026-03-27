@@ -77,10 +77,10 @@ function LessonCard({ lesson }: { lesson: Lesson }) {
 
       <div className="flex items-center gap-2">
         <Link
-          href="/transactions"
+          href="/reports"
           className="inline-flex h-10 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-medium text-background hover:opacity-90 transition-opacity flex-1"
         >
-          このレッスンで演習
+          進捗・弱点を確認
         </Link>
       </div>
     </div>
@@ -95,7 +95,7 @@ export default function AccountsPage() {
           学習コンテンツ
         </h1>
         <p className="text-sm text-foreground/70 mt-1">
-          レッスンを進めて、問題演習で定着させる（UIサンプル）
+          レッスンを進めて、確認問題で定着させる（UIサンプル）
         </p>
       </section>
 
@@ -110,10 +110,10 @@ export default function AccountsPage() {
         </div>
         <div className="flex gap-2">
           <Link
-            href="/transactions"
+            href="/reports"
             className="inline-flex h-11 items-center justify-center rounded-lg border border-foreground/10 bg-background px-4 text-sm font-medium hover:bg-foreground/5 transition-colors"
           >
-            問題演習へ
+            進捗・弱点へ
           </Link>
           <button
             disabled

@@ -66,7 +66,7 @@ export default function SettingsPage() {
 
         <div className="p-5 flex items-center justify-end gap-3 border-t border-foreground/10">
           <Link
-            href="/dashboard"
+            href="/accounts"
             className="inline-flex h-10 items-center justify-center rounded-lg border border-foreground/10 bg-background px-4 text-sm font-medium hover:bg-foreground/5 transition-colors"
           >
             戻る

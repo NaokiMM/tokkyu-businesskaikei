@@ -16,11 +16,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <aside className="hidden md:flex md:w-64 md:flex-col md:border-r md:border-foreground/10 md:bg-background">
         <div className="px-5 py-5 border-b border-foreground/10">
           <div className="text-lg font-semibold tracking-tight">特急ビジネス会計</div>
-          <div className="text-xs text-foreground/70 mt-1">学習・問題演習</div>
+          <div className="text-xs text-foreground/70 mt-1">学習サイト</div>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
-          <NavItem href="/dashboard" label="学習ダッシュボード" />
-          <NavItem href="/transactions" label="問題演習" />
           <NavItem href="/accounts" label="学習コンテンツ" />
           <NavItem href="/reports" label="進捗・弱点" />
           <NavItem href="/settings" label="設定" />

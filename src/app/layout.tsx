@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "特急ビジネス会計",
     template: "%s | 特急ビジネス会計",
   },
-  description: "特急ビジネス会計の学習・問題演習サイト（UIサンプル）",
+  description: "特急ビジネス会計の学習サイト（UIサンプル）",
 };
 
 export default function RootLayout({

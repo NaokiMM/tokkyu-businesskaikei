@@ -124,10 +124,10 @@ export default function ReportsPage() {
               期間変更（ダミー）
             </button>
             <Link
-              href="/transactions"
+              href="/accounts"
               className="inline-flex h-10 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-medium text-background hover:opacity-90 transition-opacity"
             >
-              問題演習へ
+              学習コンテンツへ
             </Link>
           </div>
         </div>
