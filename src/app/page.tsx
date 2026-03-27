@@ -13,10 +13,10 @@ export default function Home() {
             <button className="rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-white/90">
               JP
             </button>
-            <Link href="/settings" className="text-white/80 hover:text-white transition-colors">
+            <Link href="/" className="text-white/80 hover:text-white transition-colors">
               マイページ
             </Link>
-            <Link href="/accounts" className="text-white/80 hover:text-white transition-colors">
+            <Link href="/" className="text-white/80 hover:text-white transition-colors">
               ログイン
             </Link>
           </div>
@@ -40,21 +40,21 @@ export default function Home() {
           <p className="mt-10 max-w-3xl text-xl leading-relaxed text-white/75">
             世の中に存在する唯一のビジネス会計検定に特化した、Web学習サイトです。
             <br />
-            学習コンテンツと確認問題を行き来しながら、短時間で実力を伸ばせます。
+            インプット学習と確認問題を行き来しながら、短時間で実力を伸ばせます。
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
-              href="/accounts"
+              href="/"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-500 px-8 text-base font-semibold text-white shadow-lg shadow-blue-900/40 hover:bg-blue-400 transition-colors"
             >
               無料ではじめる
             </Link>
             <Link
-              href="/accounts"
+              href="/"
               className="inline-flex h-12 items-center justify-center rounded-xl border border-white/25 bg-white/5 px-8 text-base font-semibold text-white/90 hover:bg-white/10 transition-colors"
             >
-              学習コンテンツを見る
+              サービスを見る
             </Link>
           </div>
         </section>
@@ -97,9 +97,9 @@ export default function Home() {
             <p className="text-xs font-semibold tracking-widest text-blue-300">FLOW</p>
             <h2 className="mt-3 text-2xl font-semibold">学習の進め方</h2>
             <ol className="mt-4 space-y-3 text-sm leading-relaxed text-white/80">
-              <li>1. 学習コンテンツで論点を理解する</li>
+              <li>1. インプット学習で論点を理解する</li>
               <li>2. 確認問題でアウトプットして定着させる</li>
-              <li>3. 進捗・弱点を確認し、次の学習を決める</li>
+              <li>3. 学習方針を確認し、次の学習を決める</li>
             </ol>
           </div>
         </section>
@@ -107,11 +107,11 @@ export default function Home() {
         <section className="mt-16 mb-8 rounded-2xl border border-blue-300/30 bg-blue-500/10 p-8 text-center">
           <h2 className="text-2xl font-semibold">まずは今日の学習を始めましょう</h2>
           <p className="mt-3 text-sm text-white/80">
-            学習コンテンツから開始して、最短ルートで学習を進められます。
+            トップから開始して、最短ルートで学習を進められます。
           </p>
           <div className="mt-6">
             <Link
-              href="/accounts"
+              href="/"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-500 px-8 text-base font-semibold text-white shadow-lg shadow-blue-900/40 hover:bg-blue-400 transition-colors"
             >
               学習を始める
