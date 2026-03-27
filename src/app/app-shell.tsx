@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname.startsWith("/auth");
 
   if (isHome) {
     return <>{children}</>;
