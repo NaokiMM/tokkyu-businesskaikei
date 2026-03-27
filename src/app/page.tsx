@@ -10,13 +10,10 @@ export default function Home() {
             <div className="text-xl font-semibold tracking-tight">特急ビジネス会計</div>
           </div>
           <div className="flex items-center gap-6 text-sm">
-            <button className="rounded-xl border border-white/20 bg-white/10 px-3 py-1.5 text-white/90">
-              JP
-            </button>
             <Link href="/" className="text-white/80 hover:text-white transition-colors">
               マイページ
             </Link>
-            <Link href="/" className="text-white/80 hover:text-white transition-colors">
+            <Link href="/auth/login" className="text-white/80 hover:text-white transition-colors">
               ログイン
             </Link>
           </div>
@@ -45,7 +42,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
-              href="/"
+              href="/auth"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-blue-500 px-8 text-base font-semibold text-white shadow-lg shadow-blue-900/40 hover:bg-blue-400 transition-colors"
             >
               無料ではじめる
